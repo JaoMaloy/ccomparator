@@ -14,7 +14,9 @@ const NavBreadcrumbs = styled(Breadcrumbs)({
 const Navigation = ({ onRouteChange }) => {
     return (
         <nav className='navbar'>
-            <Logo />
+            <div className='logo' onClick={() => onRouteChange('home')}>
+                <Logo />
+            </div>
             <NavBreadcrumbs aria-label="breadcrumb">
               <Link className='dim pa3 pointer' color="inherit" onClick={() => onRouteChange('home')}> Home </Link>
               <Link className='dim pa3 pointer' color="inherit" onClick={() => onRouteChange('casual')}> Casual </Link>

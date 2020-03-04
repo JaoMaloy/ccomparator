@@ -4,6 +4,7 @@ import Navigation from './components/Navigation/Navigation';
 import ImageUpload from './components/ImageUpload/ImageUpload';
 import ImageComparison from './components/ImageComparison/ImageComparison';
 import ImageGallery from './components/ImageGallery/ImageGallery';
+import HomeDescriptions from './components/HomeDescriptions/HomeDescriptions';
 import 'tachyons';
 
 class App extends React.Component {
@@ -46,6 +47,7 @@ class App extends React.Component {
                 <div className='App'>
                     <div>
                         <Navigation onRouteChange={this.onRouteChange} />
+                        <HomeDescriptions />
                     </div>
                 </div>
             );

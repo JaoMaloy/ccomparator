@@ -3,7 +3,9 @@ import ReactCompareImage from 'react-compare-image';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { styled } from '@material-ui/core/styles';
+import ImagePalette from '../ImagePalette/ImagePalette';
 import './ImageComparison.css';
+import { FormHelperText } from '@material-ui/core';
 
 const TitleTypography = styled(Typography)({
     color: 'white',
@@ -58,20 +60,26 @@ class ImageComparison extends React.Component {
     }
 
     render() {
-        const { leftImage, rightImage, onHover } = this.state;
+        const { leftImage, rightImage } = this.state;
 
         if (this.props.route === '1vs1') {
             return (
-                <div className='center white'>
+                <div className='white'>
                     <TitleTypography variant='h4' gutterBottom> {'One vs One'} </TitleTypography>
-
-                    <div style={{ maxWidth: 1200 }} className='center'>
-                        <ReactCompareImage
-                            leftImage={leftImage}
-                            rightImage={rightImage}
-                            onSliderPositionChange={this.setPosition}
-                            hover={onHover}
-                        />
+                    <div className='container'>
+                        <div>
+                            <ImagePalette imageSource={leftImage} />
+                        </div>
+                        <div className='image-container'>
+                            <ReactCompareImage
+                                leftImage={leftImage}
+                                rightImage={rightImage}
+                                onSliderPositionChange={this.setPosition}
+                            />
+                        </div>
+                        <div>
+                            <ImagePalette imageSource={rightImage} />
+                        </div>
                     </div>
                     <input style={{display: 'none'}} id="play-button"/>
                     <label htmlFor="play-button">
@@ -82,16 +90,23 @@ class ImageComparison extends React.Component {
         }
         else if (this.props.route === '1vsMany') {
              return(
-                 <div className='center white'>
+                 <div className='white'>
                      <TitleTypography variant='h4' gutterBottom> {'One vs Many'} </TitleTypography>
-
-                     <div style={{ maxWidth: 1200 }} className='center'>
-                         <ReactCompareImage
-                             leftImage={leftImage}
-                             rightImage={rightImage}
-                             handle={<React.Fragment />}
-                             onSliderPositionChange={this.setPosition}
-                         />
+                     <div className='container'>
+                        <div>
+                            <ImagePalette imageSource={leftImage} />
+                        </div>
+                        <div className='image-container'>
+                            <ReactCompareImage
+                                leftImage={leftImage}
+                                rightImage={rightImage}
+                                handle={<React.Fragment />}
+                                onSliderPositionChange={this.setPosition}
+                            />
+                        </div>
+                        <div>
+                            <ImagePalette imageSource={rightImage} />
+                        </div>
                      </div>
                      <input style={{display: 'none'}} id="next-button"/>
                      <label htmlFor="next-button">
@@ -102,16 +117,23 @@ class ImageComparison extends React.Component {
         }
         else if (this.props.route === 'royalRumble') {
             return (
-                <div className='center white'>
+                <div className='white'>
                     <TitleTypography variant='h4' gutterBottom> {'Royal Rumble'} </TitleTypography>
-
-                    <div style={{ maxWidth: 1200 }} className='center'>
-                        <ReactCompareImage
-                            leftImage={leftImage}
-                            rightImage={rightImage}
-                            handle={<React.Fragment />}
-                            onSliderPositionChange={this.setPosition}
-                        />
+                    <div className='container'>
+                        <div>
+                            <ImagePalette imageSource={leftImage} />
+                        </div>
+                        <div className='image-container'>
+                            <ReactCompareImage
+                                leftImage={leftImage}
+                                rightImage={rightImage}
+                                handle={<React.Fragment />}
+                                onSliderPositionChange={this.setPosition}
+                            />
+                        </div>
+                        <div>
+                            <ImagePalette imageSource={rightImage} />
+                        </div>
                     </div>
                      <input style={{display: 'none'}} id="next-button"/>
                      <label htmlFor="next-button">

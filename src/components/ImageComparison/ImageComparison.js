@@ -59,6 +59,30 @@ class ImageComparison extends React.Component {
         }
     }
 
+    onPressPrevious = () => {
+        const { route, imageSources } = this.props;
+        let { imageViewCount } = this.state;
+
+        if (this.state.imageViewCount > 1)
+        {
+            if (route === '1vsMany')
+            {
+                this.setState({
+                    rightImage: imageSources[--imageViewCount],
+                    imageViewCount: imageViewCount
+                })
+            }
+            else if (route === 'royalRumble')
+            {
+                this.setState({
+                    leftImage: imageSources[imageViewCount-2],
+                    rightImage: imageSources[--imageViewCount],
+                    imageViewCount: imageViewCount
+                })
+            }
+        }
+    }
+
     render() {
         const { leftImage, rightImage } = this.state;
 
@@ -110,6 +134,10 @@ class ImageComparison extends React.Component {
                      </div>
                      <input style={{display: 'none'}} id="next-button"/>
                      <label htmlFor="next-button">
+                         <Button component='span' variant='outlined' color='inherit' onClick={this.onPressPrevious}> Previous </Button>
+                     </label>
+                     <input style={{display: 'none'}} id="next-button"/>
+                     <label htmlFor="next-button">
                          <Button component='span' variant='outlined' color='inherit' onClick={this.onPressNext}> Next </Button>
                      </label>
                  </div>
@@ -135,6 +163,10 @@ class ImageComparison extends React.Component {
                             <ImagePalette imageSource={rightImage} />
                         </div>
                     </div>
+                     <input style={{display: 'none'}} id="next-button"/>
+                     <label htmlFor="next-button">
+                         <Button component='span' variant='outlined' color='inherit' onClick={this.onPressPrevious}> Previous </Button>
+                     </label>
                      <input style={{display: 'none'}} id="next-button"/>
                      <label htmlFor="next-button">
                          <Button component='span' variant='outlined' color='inherit' onClick={this.onPressNext}> Next </Button>

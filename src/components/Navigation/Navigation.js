@@ -1,31 +1,61 @@
 import React from 'react';
 import Logo from '../Logo/Logo'
-import Breadcrumbs from '@material-ui/core/Breadcrumbs';
-import Link from '@material-ui/core/Link';
-import { styled } from '@material-ui/styles';
 import './Navigation.css'
+import { AppBar, Toolbar, IconButton, makeStyles, Tooltip } from '@material-ui/core';
+import RoyalRumbleIcon from '@material-ui/icons/ViewCarousel';
+import OnevsManyIcon from '@material-ui/icons/VerticalSplit';
+import OnevsOneIcon from '@material-ui/icons/PhotoLibrary';
+import CasualIcon from '@material-ui/icons/BurstMode';
 
-const NavBreadcrumbs = styled(Breadcrumbs)({
-    color: 'white',
-    fontWeight: 'lighter',
-    paddingTop: 37
-});
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  appBar: {
+    backgroundColor: '#212121',
+  },
+  toolbar: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  }
+}));
+
 
 const Navigation = ({ onRouteChange }) => {
-    return (
-        <nav className='navbar'>
+  const classes = useStyles();
+  return (
+      <div className={classes.root}>
+        <AppBar postion='static' className={classes.appBar}>
+          <Toolbar className={classes.toolbar}>
             <div className='logo' onClick={() => onRouteChange('home')}>
-                <Logo />
+              <Logo />
             </div>
-            <NavBreadcrumbs aria-label="breadcrumb">
-              <Link className='dim pa3 pointer' color="inherit" onClick={() => onRouteChange('home')}> Home </Link>
-              <Link className='dim pa3 pointer' color="inherit" onClick={() => onRouteChange('casual')}> Casual </Link>
-              <Link className='dim pa3 pointer' color="inherit" onClick={() => onRouteChange('1vs1')} > 1vs1 </Link>
-              <Link className='dim pa3 pointer' color="inherit" onClick={() => onRouteChange('1vsMany')} > 1vsMany </Link>
-              <Link className='dim pa3 pointer' color="inherit" onClick={() => onRouteChange('royalRumble')} > Royal Rumble </Link>
-            </NavBreadcrumbs>
-        </nav>
-    );
+            <div className='modes'>
+              <Tooltip title='Casual Mode'>
+              <IconButton aria-label='casual' onClick={() => onRouteChange('casual')} style={{ color: 'white' }}>
+                <CasualIcon />
+              </IconButton>
+              </Tooltip>
+              <Tooltip title='One vs One Mode'>
+                <IconButton aria-label='onevsone' onClick={() => onRouteChange('1vs1')} style={{ color: 'white' }}>
+                  <OnevsOneIcon />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title='One vs Many Mode' onClick={() => onRouteChange('1vsMany')} style={{ color: 'white' }}>
+                <IconButton aria-label='onevsmany'>
+                  <OnevsManyIcon />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title='Royal Rumble Mode' onClick={() => onRouteChange('royalRumble')} style={{ color: 'white' }}>
+                <IconButton aria-label='royalrumble'>
+                  <RoyalRumbleIcon />
+                </IconButton>
+              </Tooltip>
+            </div>
+          </Toolbar>
+        </AppBar>
+      </div>
+  );
 }
 
 export default Navigation;

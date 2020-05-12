@@ -1,10 +1,21 @@
-.navbar
+.modes
 {
-    display: flex;
-    flex-wrap: wrap;
+    padding-right: 10px;
+    color: white;
+}
+
+.logo
+{
+    padding-left: 10px;
+    padding-top: 2px;
 }
 
 .logo:hover
 {
     cursor: pointer;
+}
+
+.icon
+{
+    color: white;
 }

@@ -1,15 +1,21 @@
 import React from 'react';
 import ReactCompareImage from 'react-compare-image';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import { styled } from '@material-ui/core/styles';
 import ImagePalette from '../ImagePalette/ImagePalette';
 import './ImageComparison.css';
-import { FormHelperText } from '@material-ui/core';
+import { FormHelperText, Icon } from '@material-ui/core';
 
 const TitleTypography = styled(Typography)({
     color: 'white',
     fontWeight: 100,
+});
+
+const ButtonOverlay = styled(IconButton)({
+    position: 'absolute',
 });
 
 class ImageComparison extends React.Component {
@@ -105,10 +111,6 @@ class ImageComparison extends React.Component {
                             <ImagePalette imageSource={rightImage} />
                         </div>
                     </div>
-                    <input style={{display: 'none'}} id="play-button"/>
-                    <label htmlFor="play-button">
-                        <Button component='span' variant='outlined' color='inherit' onClick={this.onPressPlay}> Play </Button>
-                    </label>
                 </div>
             );
         }
@@ -127,19 +129,17 @@ class ImageComparison extends React.Component {
                                 handle={<React.Fragment />}
                                 onSliderPositionChange={this.setPosition}
                             />
+                            <ButtonOverlay className='previous-button'>
+                                <NavigateBeforeIcon fontSize='large' style={{ color: 'white' }} onClick={this.onPressPrevious} />
+                            </ButtonOverlay>
+                            <ButtonOverlay className='next-button'>
+                                <NavigateNextIcon fontSize='large' style={{ color: 'white' }} onClick={this.onPressNext} />
+                            </ButtonOverlay>
                         </div>
                         <div>
                             <ImagePalette imageSource={rightImage} />
                         </div>
                      </div>
-                     <input style={{display: 'none'}} id="next-button"/>
-                     <label htmlFor="next-button">
-                         <Button component='span' variant='outlined' color='inherit' onClick={this.onPressPrevious}> Previous </Button>
-                     </label>
-                     <input style={{display: 'none'}} id="next-button"/>
-                     <label htmlFor="next-button">
-                         <Button component='span' variant='outlined' color='inherit' onClick={this.onPressNext}> Next </Button>
-                     </label>
                  </div>
              );
         }
@@ -158,19 +158,17 @@ class ImageComparison extends React.Component {
                                 handle={<React.Fragment />}
                                 onSliderPositionChange={this.setPosition}
                             />
+                            <ButtonOverlay className='previous-button'>
+                                <NavigateBeforeIcon fontSize='large' style={{ color: 'white' }} onClick={this.onPressPrevious} />
+                            </ButtonOverlay>
+                            <ButtonOverlay className='next-button'>
+                                <NavigateNextIcon fontSize='large' style={{ color: 'white' }} onClick={this.onPressNext} />
+                            </ButtonOverlay>
                         </div>
                         <div>
                             <ImagePalette imageSource={rightImage} />
                         </div>
                     </div>
-                     <input style={{display: 'none'}} id="next-button"/>
-                     <label htmlFor="next-button">
-                         <Button component='span' variant='outlined' color='inherit' onClick={this.onPressPrevious}> Previous </Button>
-                     </label>
-                     <input style={{display: 'none'}} id="next-button"/>
-                     <label htmlFor="next-button">
-                         <Button component='span' variant='outlined' color='inherit' onClick={this.onPressNext}> Next </Button>
-                     </label>
                 </div>
             );
         }

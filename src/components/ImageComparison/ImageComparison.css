@@ -9,6 +9,21 @@
 
 .image-container
 {
+    position: relative;
     width: 1200px;
     max-width: 1200px;
+}
+
+.next-button
+{
+    position: absolute;
+    top: 50%;
+    right: 0px;
+}
+
+.previous-button
+{
+    position: absolute;
+    top: 50%;
+    left: 0px;
 }

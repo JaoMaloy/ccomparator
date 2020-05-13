@@ -5,31 +5,34 @@ import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles(theme => ({
     jumbotron: {
-        paddingTop: 50
+        paddingBottom: 100
     },
     typography: {
         color: 'white',
         fontWeight: 100
     },
     button: {
-        display: 'none'
-    },
-    styledButton: {
-      '&:hover': {
-        background: 'black',
-        cursor: 'pointer',
+        backgroundColor: '#1F7A8C',
+        color: 'white',
 
-        '&:before': {
-          transform: 'translateX(300px)  skewX(-15deg)',
-          opacity: '0.6',
-          transition: '.7s',
+        '&:hover': {
+            backgroundColor: '#022B3A',
+            cursor: 'pointer',
         },
-        '&:after': {
-          transform: 'translateX(300) skewX(15)',
-          opacity: '1',
-          transition: '.7s',
-        }
-      }
+            '&:before': {
+                transform: 'translateX(300px)  skewX(-15deg)',
+                opacity: '0.6',
+                transition: '.7s',
+            },
+            '&:after': {
+                transform: 'translateX(300) skewX(15)',
+                opacity: '1',
+                transition: '.7s',
+            }
+    },
+    badge: {
+        backgroundColor: '#022B3A',
+        color: 'white'
     }
 }));
 
@@ -45,16 +48,16 @@ const ImageUpload = ({ route, onInputChange }) => {
                      <Typography className={classes.typography} variant='h5' gutterBottom> {'Compare two images by moving the slider in the center'} </Typography>
                  </div>
 
-                 <div className='white center flex flex-wrap justify-center'>
-                     <div className='center shadow-5 pa5'>
-                        <input className={classes.button} accept='image/*' id="browse-button" type='file' onChange={onInputChange}/>
+                 <div className='white center flex justify-center'>
+                    <div className='center shadow-5'>
+                        <input style={{ display: 'none' }} accept='image/*' id="browse-button" type='file' onChange={onInputChange}/>
                         <label htmlFor="browse-button">
-                            <Button className={classes.styledButton} component='span' variant='outlined' size='large' color='inherit'> Upload Image </Button>
+                            <Button className={classes.button} component='span' variant='contained' size='large' color='inherit'> Upload Image </Button>
                         </label>
                     </div>
-                    <div className='center shadow-5 pa5'>
+                    <div className='center shadow-5'>
                          <label htmlFor="browse-button">
-                             <Button component='span' variant='outlined' size='large' color='inherit'> Upload Image </Button>
+                            <Button className={classes.button} component='span' variant='contained' size='large' color='inherit'> Upload Image </Button>
                          </label>
                     </div>
                  </div>
@@ -71,16 +74,16 @@ const ImageUpload = ({ route, onInputChange }) => {
                 </div>
 
                 <div className='center flex flex-wrap justify-center white'>
-                    <div className='center shadow-5 pa5'>
-                        <input className={classes.button} accept='image/*' id="browse-button" type='file' onChange={onInputChange}/>
+                    <div className='center shadow-5'>
+                        <input style={{ display: 'none' }} accept='image/*' id="browse-button" type='file' onChange={onInputChange}/>
                         <label htmlFor="browse-button">
-                            <Button component='span' variant='outlined' size='large' color='inherit'> Upload Image </Button>
+                            <Button className={classes.button} component='span' variant='contained' size='large' color='inherit'> Upload Image </Button>
                         </label>
                     </div>
-                    <div className='center shadow-5 pa5'>
-                         <input className={classes.button} accept='image/*' id="browse-multiple-button" type='file' onChange={onInputChange} multiple/>
+                    <div className='center shadow-5'>
+                         <input style={{ display: 'none' }} accept='image/*' id="browse-multiple-button" type='file' onChange={onInputChange} multiple/>
                          <label htmlFor="browse-multiple-button">
-                             <Button component='span' variant='outlined' size='large' color='inherit'> Upload Images </Button>
+                            <Button className={classes.button} component='span' variant='contained' size='large' color='inherit'> Upload Images </Button>
                          </label>
                     </div>
                 </div>
@@ -94,15 +97,15 @@ const ImageUpload = ({ route, onInputChange }) => {
              return (
                  <div>
                      <div className={classes.jumbotron}>
-                         <Typography className={classes.typography} variant='h2' gutterBottom> {'Casual'} </Typography>
+                         <Typography className={classes.typography} variant='h2' gutterBottom> {'Casual Mode'} </Typography>
                          <Typography className={classes.typography} variant='h5' gutterBottom> {'Just an image gallery to watch all of your selected images'} </Typography>
                      </div>
 
                      <div className='white center flex flex-wrap justify-center'>
-                         <div className='center shadow-5 pa5'>
-                             <input className={classes.button} accept='image/*' id="browse-multiple-button" type='file' multiple onChange={onInputChange}/>
+                         <div className='center shadow-5'>
+                             <input style={{ display: 'none' }} accept='image/*' id="browse-multiple-button" type='file' multiple onChange={onInputChange}/>
                              <label htmlFor="browse-multiple-button">
-                                 <Button component='span' variant='outlined' size='large' color='inherit'> Upload Images </Button>
+                                <Button className={classes.button} component='span' variant='contained' size='large'> Upload Images </Button>
                              </label>
                          </div>
                      </div>
@@ -119,10 +122,10 @@ const ImageUpload = ({ route, onInputChange }) => {
                      </div>
 
                      <div className='white center flex flex-wrap justify-center'>
-                         <div className='center shadow-5 pa5'>
-                              <input className={classes.button} accept='image/*' id="browse-button" type='file' multiple onChange={onInputChange}/>
+                         <div className='center shadow-5 '>
+                              <input style={{ display: 'none' }} accept='image/*' id="browse-button" type='file' multiple onChange={onInputChange}/>
                               <label htmlFor="browse-button">
-                                  <Button component='span' variant='outlined' size='large' color='inherit'> Upload Images</Button>
+                                  <Button className={classes.button} component='span' variant='contained' size='large' color='inherit'> Upload Images</Button>
                               </label>
                          </div>
                      </div>

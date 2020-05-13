@@ -1,5 +1,19 @@
 .App {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 0.5fr 9fr 0.5fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.body
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  width: 100%;
 }
 
 .App-logo {

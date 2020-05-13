@@ -94,7 +94,7 @@ class ImageComparison extends React.Component {
 
         if (this.props.route === '1vs1') {
             return (
-                <div className='white'>
+                <div className='base'>
                     <TitleTypography variant='h4' gutterBottom> {'One vs One'} </TitleTypography>
                     <div className='container'>
                         <div>
@@ -116,7 +116,7 @@ class ImageComparison extends React.Component {
         }
         else if (this.props.route === '1vsMany') {
              return(
-                 <div className='white'>
+                 <div className='base'>
                      <TitleTypography variant='h4' gutterBottom> {'One vs Many'} </TitleTypography>
                      <div className='container'>
                         <div>
@@ -145,7 +145,7 @@ class ImageComparison extends React.Component {
         }
         else if (this.props.route === 'royalRumble') {
             return (
-                <div className='white'>
+                <div className='base'>
                     <TitleTypography variant='h4' gutterBottom> {'Royal Rumble'} </TitleTypography>
                     <div className='container'>
                         <div>

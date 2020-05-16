@@ -4,7 +4,7 @@ import Navigation from './components/Navigation/Navigation';
 import ImageUpload from './components/ImageUpload/ImageUpload';
 import ImageComparison from './components/ImageComparison/ImageComparison';
 import ImageGallery from './components/ImageGallery/ImageGallery';
-import HomeDescriptions from './components/HomeDescriptions/HomeDescriptions';
+import HomePage from './pages/HomePage/HomePage';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
@@ -50,7 +50,7 @@ class App extends React.Component {
     }
 
     render(){
-        const { route, imageSources } = this.state;
+        const { route, imageSources, openSnackbar } = this.state;
 
         console.log('route', route);
 
@@ -60,8 +60,8 @@ class App extends React.Component {
                     <header>
                         <Navigation onRouteChange={this.onRouteChange} />
                     </header>
-                    <main className='body'>
-                        <HomeDescriptions />
+                    <main className='front-page'>
+                        <HomePage onRouteChange={this.onRouteChange} />
                     </main>
                 </div>
             );
@@ -80,7 +80,7 @@ class App extends React.Component {
                             <ImageGallery imageSources={imageSources} />
                         </div>
                         }
-                        <Snackbar anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }} open={this.state.openSnackbar} autoHideDuration={6000} onClose={this.handleClose} message="Image Uploaded"
+                        <Snackbar anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }} open={openSnackbar} autoHideDuration={6000} onClose={this.handleClose} message='Image uploaded'
                         action={
                             <React.Fragment>
                                 <IconButton size="small" aria-label="close" color="inherit" onClick={this.handleClose}>
@@ -106,7 +106,7 @@ class App extends React.Component {
                         <ImageUpload route={route} onInputChange={(event) => this.onInputChange(event) } />
                       </div>
                     }
-                    <Snackbar anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }} open={this.state.openSnackbar} autoHideDuration={6000} onClose={this.handleClose} message="Image Uploaded"
+                    <Snackbar anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }} open={openSnackbar} autoHideDuration={6000} onClose={this.handleClose} message="Image Uploaded"
                     action={
                         <React.Fragment>
                             <IconButton size="small" aria-label="close" color="inherit" onClick={this.handleClose}>

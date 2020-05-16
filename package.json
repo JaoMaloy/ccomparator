@@ -2,11 +2,17 @@
   "name": "react-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jaomaloy.github.io/ccomparator",
   "dependencies": {
     "@material-ui/core": "^4.9.0",
+    "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/user-event": "^7.2.1",
     "base64-js": "^1.3.1",
+    "classnames": "^2.2.6",
+    "color-thief-react": "^1.0.2",
+    "colorthief": "^2.3.0",
+    "lodash": "^4.17.15",
     "react": "^16.12.0",
     "react-compare-image": "^2.0.4",
     "react-dom": "^16.12.0",
@@ -19,7 +25,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,6 +45,7 @@
     ]
   },
   "devDependencies": {
-    "css-loader": "^3.4.2"
+    "css-loader": "^3.4.2",
+    "gh-pages": "^2.2.0"
   }
 }

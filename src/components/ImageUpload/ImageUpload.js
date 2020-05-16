@@ -30,10 +30,6 @@ const useStyles = makeStyles(theme => ({
                 transition: '.7s',
             }
     },
-    badge: {
-        backgroundColor: '#022B3A',
-        color: 'white'
-    }
 }));
 
 const ImageUpload = ({ route, onInputChange }) => {

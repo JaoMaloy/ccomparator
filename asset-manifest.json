@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/ccomparator/static/css/main.f7207364.chunk.css",
+    "main.js": "/ccomparator/static/js/main.4ead8a0a.chunk.js",
+    "main.js.map": "/ccomparator/static/js/main.4ead8a0a.chunk.js.map",
+    "runtime-main.js": "/ccomparator/static/js/runtime-main.4e0f269c.js",
+    "runtime-main.js.map": "/ccomparator/static/js/runtime-main.4e0f269c.js.map",
+    "static/css/2.7063d15d.chunk.css": "/ccomparator/static/css/2.7063d15d.chunk.css",
+    "static/js/2.fdc8774b.chunk.js": "/ccomparator/static/js/2.fdc8774b.chunk.js",
+    "static/js/2.fdc8774b.chunk.js.map": "/ccomparator/static/js/2.fdc8774b.chunk.js.map",
+    "index.html": "/ccomparator/index.html",
+    "precache-manifest.9bc04ab10bb04240f74a6162a1bccd3e.js": "/ccomparator/precache-manifest.9bc04ab10bb04240f74a6162a1bccd3e.js",
+    "service-worker.js": "/ccomparator/service-worker.js",
+    "static/css/2.7063d15d.chunk.css.map": "/ccomparator/static/css/2.7063d15d.chunk.css.map",
+    "static/css/main.f7207364.chunk.css.map": "/ccomparator/static/css/main.f7207364.chunk.css.map",
+    "static/js/2.fdc8774b.chunk.js.LICENSE": "/ccomparator/static/js/2.fdc8774b.chunk.js.LICENSE",
+    "static/media/InfoCard.css": "/ccomparator/static/media/casual-mode.dfe805b7.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4e0f269c.js",
+    "static/css/2.7063d15d.chunk.css",
+    "static/js/2.fdc8774b.chunk.js",
+    "static/css/main.f7207364.chunk.css",
+    "static/js/main.4ead8a0a.chunk.js"
+  ]
+}

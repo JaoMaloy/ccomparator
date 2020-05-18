@@ -1,6 +1,5 @@
 import React from 'react';
 import {Palette} from 'color-thief-react';
-import _ from 'lodash';
 import './ImagePalette.css';
 
 const Loading = () => <div> Loading... </div>;

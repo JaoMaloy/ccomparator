@@ -7,7 +7,6 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import { styled } from '@material-ui/core/styles';
 import ImagePalette from '../ImagePalette/ImagePalette';
 import './ImageComparison.css';
-import { FormHelperText, Icon } from '@material-ui/core';
 
 const TitleTypography = styled(Typography)({
     color: 'white',

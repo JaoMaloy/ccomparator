@@ -38,8 +38,7 @@ class App extends React.Component {
     }
 
     onRouteChange = ( route ) => {
-        this.state.imageSources.length = 0;
-        this.setState( {route: route} );
+        this.setState( {route: route, imageSources: []} );
     }
 
     handleClose = (reason) => {

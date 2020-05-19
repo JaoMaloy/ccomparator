@@ -1,28 +1,16 @@
 .root
 {
     max-width: 1000px;
-    width: 700px;
-    height: 365px;
+    width: 600px;
+    height: 425px;
     display: flex;
     justify-content: center;
+    background-color: #212121 !important;
+    margin-bottom: 10px;
 }
 
-.casual
+.card-media
 {
-    background-image: url('./casual-mode.png');
-}
-
-.onevsone
-{
-    background-image: url('./1v1.png');
-}
-
-.onevsmany
-{
-    background-image: url('./1v1.png');
-}
-
-.royalrumble
-{
-    background-image: url('./1v1.png');
+    width: 600px;
+    height: 350px;
 }

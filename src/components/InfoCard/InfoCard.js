@@ -4,6 +4,10 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import casualGif from './casual.gif';
+import onevoneGif from './1v1.gif';
+import onevmanyGif from './1vMany.gif';
+import royalRumbleGif from './royalRumble.gif';
 import './InfoCard.css'
 
 var classNames = require('classnames');
@@ -15,17 +19,13 @@ const useStyles = makeStyles({
   },
   content: {
     textAlign: 'center',
+    padding: 0,
   },
-  explore: {
-    paddingTop: 40,
-    fontWeight: 'normal',
-    color: '#022B3A'
-  }
 });
 
 const InfoCard = ({ title, description, onRouteChange}) => {
   const classes = useStyles();
-  const rootClassNames = classNames('root', {
+  const rootClassNames = classNames('card-media', {
     "casual": title === 'Casual',
     "onevsone": title === 'One vs One',
     "onevsmany": title === 'One vs Many',
@@ -34,17 +34,19 @@ const InfoCard = ({ title, description, onRouteChange}) => {
   const routeToGo = (title === 'Casual') ? 'casual' : (title === 'One vs One') ? '1vs1' : (title === 'One vs Many') ? '1vsMany' : 'royalRumble';
 
   return (
-    <Card className={rootClassNames} onClick={() => onRouteChange(routeToGo)}>
+    <Card className='root' onClick={() => onRouteChange(routeToGo)}>
       <CardActionArea>
+        <img className='card-media' alt='logo' src=
+        {
+          (title === 'Casual') ? casualGif : (title === 'One vs One') ? onevoneGif : (title === 'One vs Many') ? onevmanyGif : royalRumbleGif
+        }
+        />
         <CardContent className={classes.content}>
           <Typography className={classes.typography} gutterBottom variant="h5" component="h2">
             {title}
           </Typography>
           <Typography className={classes.typography} variant="body2" color="textSecondary" component="p">
             {description}
-          </Typography>
-          <Typography className={classes.explore} variant="body2" color="textSecondary" component="p">
-            EXPLORE
           </Typography>
         </CardContent>
       </CardActionArea>

@@ -40,6 +40,6 @@
     height: 100vh;
     width: 100%;
     grid-template-columns: 5fr 5fr;
-    align-items: center;
+    align-items: flex-end;
     justify-items: center;
 }

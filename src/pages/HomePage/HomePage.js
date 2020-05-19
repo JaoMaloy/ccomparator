@@ -34,10 +34,10 @@ class HomePage extends React.Component {
           </div>
         </div>
         <div id='cards-container' ref={this.cardsContainer}>
-          <InfoCard title={'Casual'} description={'Casual'} onRouteChange={this.state.onRouteChange} />
-          <InfoCard title={'One vs One'} description={'1v1'} onRouteChange={this.state.onRouteChange} />
-          <InfoCard title={'One vs Many'} description={'1vMany'} onRouteChange={this.state.onRouteChange} />
-          <InfoCard title={'Royal Rumble'} description={'Royal Rumble'} onRouteChange={this.state.onRouteChange} />
+          <InfoCard title={'Casual'} description={'An image gallery to watch all of your selected images'} onRouteChange={this.state.onRouteChange} />
+          <InfoCard title={'One vs One'} description={'Compare two images by moving the slider in the center'} onRouteChange={this.state.onRouteChange} />
+          <InfoCard title={'One vs Many'} description={'Compare multiple images with a base image as a reference'} onRouteChange={this.state.onRouteChange} />
+          <InfoCard title={'Royal Rumble'} description={'Compare all the images you select sequentially'} onRouteChange={this.state.onRouteChange} />
         </div>
       </div>
     );

@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Navigation = ({ onRouteChange }) => {
   const classes = useStyles();
+
   return (
     <div>
       <AppBar className={classes.appBar}>

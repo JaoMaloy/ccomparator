@@ -42,4 +42,5 @@
     grid-template-columns: 5fr 5fr;
     align-items: flex-end;
     justify-items: center;
+    padding-top: 64px;
 }

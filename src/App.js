@@ -57,7 +57,7 @@ class App extends React.Component {
             return (
                 <div id='app' className='App'>
                     <header>
-                        <Navigation onRouteChange={this.onRouteChange} />
+                        <Navigation route={route} onRouteChange={this.onRouteChange} />
                     </header>
                     <main className='front-page'>
                         <HomePage onRouteChange={this.onRouteChange} />
@@ -68,7 +68,7 @@ class App extends React.Component {
         else if (route === 'casual'){
             return (
                 <div className='App'>
-                        <Navigation onRouteChange={this.onRouteChange} />
+                        <Navigation route={route} onRouteChange={this.onRouteChange} />
                         { (imageSources.length === 0)
                         ?
                         <div className='body'>
@@ -94,7 +94,7 @@ class App extends React.Component {
         else{
             return (
                 <div className='App'>
-                    <Navigation onRouteChange={this.onRouteChange} />
+                    <Navigation route={route} onRouteChange={this.onRouteChange} />
                     { (imageSources.length > 1)
                       ?
                       <div className='body'>

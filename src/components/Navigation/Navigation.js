@@ -10,6 +10,8 @@ import CasualIcon from '@material-ui/icons/BurstMode';
 const useStyles = makeStyles((theme) => ({
   appBar: {
     backgroundColor: '#212121',
+    paddingLeft: 60,
+    paddingRight: 60,
   },
   toolbar: {
     display: 'flex',
@@ -17,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Navigation = ({ onRouteChange }) => {
+const Navigation = ({ route, onRouteChange }) => {
   const classes = useStyles();
 
   return (
@@ -29,21 +31,21 @@ const Navigation = ({ onRouteChange }) => {
           </div>
           <div className='modes'>
             <Tooltip title='Casual Mode'>
-            <IconButton aria-label='casual' onClick={() => onRouteChange('casual')} style={{ color: 'white' }}>
+            <IconButton aria-label='casual' onClick={() => onRouteChange('casual')} style={ (route==='casual') ? {color: '#1F7A8C'} : {color: 'white'}}>
               <CasualIcon />
             </IconButton>
             </Tooltip>
             <Tooltip title='One vs One Mode'>
-              <IconButton aria-label='onevsone' onClick={() => onRouteChange('1vs1')} style={{ color: 'white' }}>
+              <IconButton aria-label='onevsone' onClick={() => onRouteChange('1vs1')} style={ (route==='1vs1') ? {color: '#1F7A8C'} : {color: 'white'}}>
                 <OnevsOneIcon />
               </IconButton>
             </Tooltip>
-            <Tooltip title='One vs Many Mode' onClick={() => onRouteChange('1vsMany')} style={{ color: 'white' }}>
+            <Tooltip title='One vs Many Mode' onClick={() => onRouteChange('1vsMany')} style={ (route==='1vsMany') ? {color: '#1F7A8C'} : {color: 'white'}}>
               <IconButton aria-label='onevsmany'>
                 <OnevsManyIcon />
               </IconButton>
             </Tooltip>
-            <Tooltip title='Royal Rumble Mode' onClick={() => onRouteChange('royalRumble')} style={{ color: 'white' }}>
+            <Tooltip title='Royal Rumble Mode' onClick={() => onRouteChange('royalRumble')} style={ (route==='royalRumble') ? {color: '#1F7A8C'} : {color: 'white'}}>
               <IconButton aria-label='royalrumble'>
                 <RoyalRumbleIcon />
               </IconButton>

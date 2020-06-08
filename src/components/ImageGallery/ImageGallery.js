@@ -4,25 +4,25 @@ import 'react-image-gallery/styles/css/image-gallery.css';
 import './ImageGallery.css';
 
 const ImageGallery = ({ imageSources }) => {
-    let images = [];
-    for (var i = 0; i<imageSources.length; i++)
-    {
-        images.push({
-            original: imageSources[i]
-        })
-    }
+  let images = [];
+  for (var i = 0; i < imageSources.length; i++) {
+    images.push({
+      original: imageSources[i],
+    });
+  }
 
-    return (
-        <div>
-            <div className='image-container'>
-                <ReactImageGallery
-                    items={images}
-                    showThumbnails={false}
-                    showBullets={true}
-                 />;
-            </div>
-        </div>
-    );
-}
+  return (
+    <div>
+      <div className="image-container">
+        <ReactImageGallery
+          items={images}
+          showThumbnails={false}
+          showBullets={true}
+        />
+        ;
+      </div>
+    </div>
+  );
+};
 
 export default ImageGallery;

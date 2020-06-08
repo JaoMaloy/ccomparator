@@ -8,14 +8,12 @@ import casualGif from './casual.gif';
 import onevoneGif from './1v1.gif';
 import onevmanyGif from './1vMany.gif';
 import royalRumbleGif from './royalRumble.gif';
-import './InfoCard.css'
-
-var classNames = require('classnames');
+import './InfoCard.css';
 
 const useStyles = makeStyles({
   typography: {
     color: '#1F7A8C',
-    fontWeight: 'lighter'
+    fontWeight: 'lighter',
   },
   content: {
     textAlign: 'center',
@@ -23,35 +21,54 @@ const useStyles = makeStyles({
   },
 });
 
-const InfoCard = ({ title, description, onRouteChange}) => {
+const InfoCard = ({ title, description, onRouteChange }) => {
   const classes = useStyles();
-  const rootClassNames = classNames('card-media', {
-    "casual": title === 'Casual',
-    "onevsone": title === 'One vs One',
-    "onevsmany": title === 'One vs Many',
-    "royalrumble": title === 'Royal Rumble',
-  });
-  const routeToGo = (title === 'Casual') ? 'casual' : (title === 'One vs One') ? '1vs1' : (title === 'One vs Many') ? '1vsMany' : 'royalRumble';
+  const routeToGo =
+    title === 'Casual'
+      ? 'casual'
+      : title === 'One vs One'
+      ? '1vs1'
+      : title === 'One vs Many'
+      ? '1vsMany'
+      : 'royalRumble';
 
   return (
-    <Card className='root' onClick={() => onRouteChange(routeToGo)}>
+    <Card className="root" onClick={() => onRouteChange(routeToGo)}>
       <CardActionArea>
-        <img className='card-media' alt='logo' src=
-        {
-          (title === 'Casual') ? casualGif : (title === 'One vs One') ? onevoneGif : (title === 'One vs Many') ? onevmanyGif : royalRumbleGif
-        }
+        <img
+          className="card-media"
+          alt="logo"
+          src={
+            title === 'Casual'
+              ? casualGif
+              : title === 'One vs One'
+              ? onevoneGif
+              : title === 'One vs Many'
+              ? onevmanyGif
+              : royalRumbleGif
+          }
         />
         <CardContent className={classes.content}>
-          <Typography className={classes.typography} gutterBottom variant="h5" component="h2">
+          <Typography
+            className={classes.typography}
+            gutterBottom
+            variant="h5"
+            component="h2"
+          >
             {title}
           </Typography>
-          <Typography className={classes.typography} variant="body2" color="textSecondary" component="p">
+          <Typography
+            className={classes.typography}
+            variant="body2"
+            color="textSecondary"
+            component="p"
+          >
             {description}
           </Typography>
         </CardContent>
       </CardActionArea>
     </Card>
   );
-}
+};
 
 export default InfoCard;

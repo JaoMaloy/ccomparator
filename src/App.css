@@ -7,8 +7,7 @@
   align-items: center;
 }
 
-.body
-{
+.body {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,8 +17,7 @@
   padding-top: 64px;
 }
 
-.front-page
-{
+.front-page {
   height: 200vh;
   width: 100%;
 }

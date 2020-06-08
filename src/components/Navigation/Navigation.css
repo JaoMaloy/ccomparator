@@ -1,14 +1,11 @@
-.modes
-{
-    color: white;
+.modes {
+  color: white;
 }
 
-.logo
-{
-    padding-top: 2px;
+.logo {
+  padding-top: 2px;
 }
 
-.logo:hover
-{
-    cursor: pointer;
+.logo:hover {
+  cursor: pointer;
 }
